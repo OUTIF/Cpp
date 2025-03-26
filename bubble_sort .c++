@@ -5,9 +5,9 @@
 
 using namespace std;
 
-// This function goal if to sort the array in a (ascending order).
+// This function goal is to sort the array in a (ascending order).
 void sort_sl(int a[],int s);
-// This function goal if to sort the array in a (descending order).
+// This function goal is to sort the array in a (descending order).
 void sort_ls(int a[],int s);
 
 int main(){
