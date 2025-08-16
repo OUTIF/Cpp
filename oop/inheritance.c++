@@ -3,12 +3,21 @@
 using namespace std;
 
 
+/*
+-Use protected if you want derived classes to access a member, but don’t want it accessible from outside the class.
+-Use public if you want everyone to access it.
+-Use private if only the base class should access it.
+*/
+
+
+
 class YoutubeChannel{                           //Base class 
 private:                                        //encapsulation 
     string nameOFchannel;
-    string ownername;
     int SubscriberCount;
     list<string> videoesTitles;
+protected:
+    string ownername;
 public:
     YoutubeChannel(string name,string owner ){                      
         nameOFchannel=name;
@@ -35,7 +44,7 @@ public:
         :YoutubeChannel(name,ownername) {}
 
     void practicing(){
-        cout<<"You are practicing making food \n"<<endl; 
+        cout<<ownername<<" is practicing making food \n"<<endl; 
        }
 };
 
@@ -44,7 +53,7 @@ int main(){
     CookingYoutubeChannel channel("Iraqi food","wasan");  
     channel.publishVideo("dolma");
     channel.subscribe();
-    channel.GetInfo();                  
+    channel.GetInfo();               
     channel.practicing();               // This mehtod is only avalible for this class "Cooking one".
  
 
